@@ -1,0 +1,100 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --brand-blue: #0069B4;
+    --brand-lime: #C8D300;
+    --brand-navy: #05283C;
+    --brand-red: #E30613;
+    --brand-green: #87AC4A;
+    --bg-primary: #FFFFFF;
+    --bg-secondary: #F8F8F8;
+    --border-primary: #EAEAEA;
+    --text-primary: #131313;
+    --text-secondary: #424242;
+    --text-tertiary: #787474;
+  }
+
+  * {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-white text-pgn-text;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-pgn-border rounded-full hover:bg-pgn-text-muted;
+  }
+}
+
+@layer components {
+  .pgn-card {
+    @apply bg-pgn-card border border-pgn-border rounded-xl shadow-sm transition-all duration-200 hover:shadow-md;
+  }
+
+  .pgn-card-header {
+    @apply px-5 py-4 border-b border-pgn-border;
+  }
+
+  .pgn-card-body {
+    @apply px-5 py-4;
+  }
+
+  .pgn-badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+  }
+
+  .pgn-badge-critical {
+    @apply pgn-badge bg-red-50 text-brand-red;
+  }
+
+  .pgn-badge-warning {
+    @apply pgn-badge bg-amber-50 text-amber-700;
+  }
+
+  .pgn-badge-info {
+    @apply pgn-badge bg-blue-50 text-brand-blue;
+  }
+
+  .pgn-badge-success {
+    @apply pgn-badge bg-green-50 text-brand-green;
+  }
+
+  .pgn-btn-primary {
+    @apply inline-flex items-center justify-center px-4 py-2 bg-brand-blue text-white rounded-lg text-sm font-medium
+    hover:bg-blue-700 transition-colors duration-150 focus:outline-none focus:ring-2 focus:ring-brand-blue/40;
+  }
+
+  .pgn-stat-value {
+    @apply text-2xl font-bold text-brand-navy tracking-tight;
+  }
+
+  .pgn-stat-label {
+    @apply text-xs font-medium text-pgn-text-secondary uppercase tracking-wider;
+  }
+
+  .gasnet-glow {
+    box-shadow: 0 0 20px rgba(0, 105, 180, 0.15), 0 0 60px rgba(0, 105, 180, 0.05);
+  }
+}
+
+@layer utilities {
+  .animate-delay-100 { animation-delay: 100ms; }
+  .animate-delay-200 { animation-delay: 200ms; }
+  .animate-delay-300 { animation-delay: 300ms; }
+  .animate-delay-400 { animation-delay: 400ms; }
+  .animate-delay-500 { animation-delay: 500ms; }
+}
