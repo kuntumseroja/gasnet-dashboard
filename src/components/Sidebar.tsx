@@ -15,6 +15,7 @@ import {
   ChevronLeft,
   ChevronRight,
   Flame,
+  Info,
 } from 'lucide-react'
 import { useState } from 'react'
 
@@ -27,6 +28,7 @@ const navItems = [
   { href: '/intelligence', label: 'Intelligence Hub', icon: Globe },
   { href: '/risk', label: 'Risk & Compliance', icon: ShieldAlert },
   { href: '/briefing', label: 'AI Morning Brief', icon: FileText },
+  { href: '/about', label: 'About GASNET', icon: Info },
 ]
 
 export function Sidebar() {
